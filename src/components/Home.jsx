@@ -4,7 +4,11 @@ import { motion } from "framer-motion";
 
 const Home = () => {
   return (
-    <motion.div className="home container" animate={{}}>
+    <motion.div
+      className="home container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
       <h2
         animate={{
           fontSize: "50px",
