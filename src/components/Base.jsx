@@ -12,6 +12,10 @@ const containerVariants = {
     opacity: 1,
     transition: { type: "spring", delay: 0.2 },
   },
+  exit: {
+    x: "-100vw",
+    transition: { ease: "easeInOut" },
+  },
 };
 const nextVariants = {
   hidden: { x: "-100vw" },
@@ -44,6 +48,7 @@ const Base = ({ addBase, pizza }) => {
     <motion.div
       variants={containerVariants}
       initial="hidden"
+      exit="exit"
       animate="visible"
       className="base container"
     >
