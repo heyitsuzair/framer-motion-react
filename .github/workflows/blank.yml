@@ -13,21 +13,14 @@ on:
   workflow_dispatch:
 
 jobs:
-  install_packages:
+  install_and_build:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
 
       - name: Install Packages
-        run: yarn install
+        run: | 
+          yarn install
+          yarn build
         
-  build:
-    runs-on: ubuntu-latest
-    needs: [install_packages]
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Build Script
-        run: yarn build
